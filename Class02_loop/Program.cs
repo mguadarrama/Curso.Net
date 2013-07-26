@@ -12,6 +12,8 @@ namespace Class02_loop
         {
             Console.WriteLine("Probando loops");
             
+            Console.WriteLine("Probando loops");
+            
             int e = 0;
             while (e <= 5)
             {
