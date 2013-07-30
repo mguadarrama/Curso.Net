@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>http://www.impressivewebs.com/difference-block-inline-css/</title>
+   
+</head>
+<body>
+    <article class="post-4944 post type-post status-publish format-standard hentry category-css-basics" id="post-4944">
+
+        <h1 class="entry-title">The Difference Between “Block” and “Inline”</h1>
+        <div class="entry-content">
+            <p>For the purpose of CSS styling, elements can be generally divided into a few different categories. Two of those categories are <em>block-level</em> elements and <em>inline</em> elements.</p>
+            <p>In my opinion, this is one of those areas that, once understood correctly, can help beginners to take their CSS skills to the next level.</p>
+            <h2>Block-level Elements</h2>
+            <p>A block element is an element that has, but may not be limited to, the following characteristics:</p>
+            <ul>
+                <li>If no width is set, will expand naturally to fill its parent container</li>
+                <li>Can have margins and/or padding</li>
+                <li>If no height is set, will expand naturally to fit its child elements (assuming they are not floated or positioned)</li>
+                <li>By default, will be placed below previous elements in the markup (assuming no floats or positioning on surrounding elements)</li>
+                <li>Ignores the <code>vertical-align</code> property</li>
+            </ul>
+            <p>So, for a block element, it’s not necessary to give it a set width or to give it a <a href="http://www.impressivewebs.com/width-100-percent-css/">width of 100%</a> if you want it to fill its parent horizontally. In fact, doing either of those things may cause maintainability issues or other undesirable problems.</p>
+            <p>And, as the fourth item in the above list indicates, it’s also not necessary to “clear” a block element; assuming no floats are affecting the block element, it will be cleared automatically and will start on the next “line” in the page’s output.</p>
+            <p>
+                <strong>Examples of Block Elements:</strong><br>
+                <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, and <code>&lt;h1&gt;</code>.
+            </p>
+            <p>
+                <img src="block.jpg" alt="Block-level Elements" title="Block-level Elements" width="680" height="383"></p>
+            <h2>Examples</h2>
+            
+       
+
+
+            <h2>Inline Elements</h2>
+            <p>An inline element has, but may not be limited to, the following characteristics:</p>
+            <ul>
+                <li>Flows along with text content, thus</li>
+                <li>Will not clear previous content to drop to the next line like block elements</li>
+                <li>Is subject to <a href="http://www.impressivewebs.com/css-white-space/">white-space</a> settings in CSS</li>
+                <li>Will ignore top and bottom margin settings, but will apply left and right margins, and any padding</li>
+                <li>Will ignore the <code>width</code> and <code>height</code> properties</li>
+                <li>If floated left or right, will automatically become a block-level element, subject to all block characteristics</li>
+                <li>Is subject to the <code>vertical-align</code> property</li>
+            </ul>
+            <p>The easiest way to picture an inline element is to think of it as <strong>a box that acts like text</strong>. What happens, for example, to text that’s not separated by other elements? It flows one letter after the other. If you put an inline element next to text, it will flow next to that text just like another piece of text.</p>
+            <p>
+                <strong>Examples of Inline Elements:</strong><br>
+                <code>&lt;a&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;cite&gt;</code>, <code>&lt;mark&gt;</code>, and <code>&lt;code&gt;</code>.
+            </p>
+            <p>
+                <img src="inline.jpg" alt="Inline Element" title="Inline Element" width="680" height="383"></p>
+            <h2>Other Notes</h2>
+            <p>You’ll notice that the examples of both block and inline elements are quite revealing: The block examples are structural elements, while the inline elements are text-based. This is an easy way to remember which is which, although at first you will sometimes be confused.</p>
+            <p>Generally speaking, you can put any block element inside another block element. You can also put any inline element inside a block element, as well as any inline element inside any other inline element. But you cannot put a block element inside an inline element — with (I believe) one exception: You can wrap an <code>&lt;a&gt;</code> element around any content, whether it be block eleemnts, or inline elements, or a mixure of both.</p>
+            <p>You have the option to change any block-level element to an inline element, and vice-versa, using the <code>display</code> property. So keep that in mind if you need to do this. But don’t use the wrong element for the wrong purpose. An SEO guy once told me to put an <code>&lt;h2&gt;</code> element inside of a paragraph, and style it to look like regular text, because he wanted an SEO boost. Not a good idea, that’s what <code>&lt;em&gt;</code> is for.</p>
+            <p>One final thing to note is that, although from a CSS perspective block and inline do exist, from an HTML5 perspective, the different types of elements have been re-categorized, so that they’re more specific. You can read about these <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/content-models.html">content models</a> in the WHATWG HTML5 spec.</p>
+            <h2>Bonus Tip: Replaced Elements</h2>
+            <p>At the beginning, I said that block and inline were just two types of content. Generally speaking, those are the two primary kinds, and you won’t have to worry too much about any other kinds.</p>
+            <p>But there are what are referred to as <a href="http://reference.sitepoint.com/css/replacedelements">replaced elements</a>. Basically, these are neither block nor inline. But you might classify them as something closer to inline, but with block-like structure.</p>
+            <p>I won’t provide a detailed explanation here; you can check out the SitePoint article linked in the previous paragraph for full details. But some examples of replaced elements include:</p>
+            <p><code>&lt;img&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;input&gt;</code>, and <code>&lt;select&gt;</code>.</p>
+            <h2>Conclusion</h2>
+            <p>If you’re just starting out with CSS, understanding the behaviour of block vs. inline elements will go a long way to helping you code sites that are efficient and maintainable and don’t rely on overuse of floats or other undesirable methods.</p>
+            <p style="text-align: center;"></p>
+           
+
+
+        </div>
+    
+
+
+
+    </article>
+
+</body>
+</html>
