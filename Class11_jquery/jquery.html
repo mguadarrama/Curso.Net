@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Curso de Jquery</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    
+    <div id="PrimerDiv">aaaaaa</div>
+    <div class="SegundoDid">bbbbb</div>
+    <div class="SegundoDid">bbbbb</div>
+    <div class="SegundoDid">bbbbb</div>
+    <div class="SegundoDid">bbbbb</div>
+    <div class="SegundoDid">
+        <input type="text" id="textbox"  value="Introduce un texto" />
+    </div>
+    <style>
+        .borderVerde {
+            border: 1px solid fuchsia;
+        }
+    </style>
+    <script>
+
+        
+        $(document).ready(function () {
+            
+            $('#textbox').on('focus',function () {
+                console.log('evento on focus raised');
+                $('#textbox').addClass('borderVerde');
+            });
+            $('#textbox').on('focusout', function () {
+                $('#textbox').removeClass('borderVerde');
+            });
+
+            /*
+
+                        $('#PrimerDiv').text("Este es un texto " +
+                "injectado con cariño por jquery");
+
+
+            $('#Button1').on('click', function () {
+                alert("Soys unos Lol's");
+            });
+
+
+             $('.SegundoDid').text("kajsdhkajdhkajdhakjsd");
+
+
+            $('div').each(function () {
+                var miElemento = $(this);
+
+                miElemento.attr('class', 'MiClasseCambiada');
+                console.log(this);
+            });
+            */
+
+        });
+
+
+    
+    </script>
+    
+    
+
+</body>
+</html>

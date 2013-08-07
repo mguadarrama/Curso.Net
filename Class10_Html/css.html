@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Herencia, selectores</title>
-	<style>
-	#test{
-		/*border: solid;*/
-	}
-	div{
-		border: dotted;
-	}
-
-	li div{
-		border: solid;
-	}
-
-	</style>
+    <title>Herencia, selectores</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        li div {
+            color: red;
+        }
+        li div {
+            color: green;
+        }
+    </style>
 </head>
 <body>
 	<div>
@@ -23,9 +21,9 @@
 			<ul>
 				<li>a</li>
 				<li>b</li>
-				<li><div>c</div></li>
-				<li>d</li>
-				<li>e</li>
+			    <li>
+			        <div>c</div>
+			    </li>
 			</ul>
 		</div>
 	</div>

@@ -1,0 +1,93 @@
+﻿@model Class15_Todo.ViewModels.TodoViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Todo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TodoNew.TaskId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TodoNew.TaskId)
+            @Html.ValidationMessageFor(model => model.TodoNew.TaskId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TodoNew.TaskName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TodoNew.TaskName)
+            @Html.ValidationMessageFor(model => model.TodoNew.TaskName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TodoNew.Completed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TodoNew.Completed)
+            @Html.ValidationMessageFor(model => model.TodoNew.Completed)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+
+
+
+
+<table>
+  @*  <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Completed)
+        </th>
+        <th></th>
+    </tr>*@
+    
+
+
+    @foreach (var item in Model.TodoList) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Completed)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>

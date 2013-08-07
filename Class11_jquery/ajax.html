@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pruebas Ajax</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+    <body>
+        <input type="text" id="input1" value="" />
+        <input type="button" id="boton1"  value="json" />
+        
+        <script>
+            $(document).ready(function () {
+                $('#boton1').on('click', function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:17071/WebService1.asmx/HelloWorld",
+                        dataType: "xml",
+                        contentType: "application/xml; charset=utf-8",
+                        success: function (result) {
+                            $("#input1").val($(result).children("string").text());
+                        }
+                    });
+
+                });
+            });
+        </script>
+        
+
+    </body>
+</html>
