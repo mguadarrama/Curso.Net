@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Helpers</title>
+</head>
+<body>
+    <div>
+        @Html.BeginForm()
+        
+        @Html.ValidationSummary()
+
+        
+        @Html.Label("label1")
+        
+        @Html.DropDownList("PaisesId", ViewBag.Paises as SelectList)
+        
+
+        @*@Html.TextBox("textbox1", Model.Campo1)*@
+        @Html.TextBox("textbox1")
+
+        @Html.ValidationMessage("modelName")
+        
+        @Html.TextArea("textarea1")
+        
+        @Html.ListBox("listbox1")
+        
+        
+        @* ViewBag.Price = 10.0; *@
+        @Html.TextBox("Price")
+        
+        
+        
+        @* Helper tipado*@
+        @Html.TextBoxFor(m => m.Title)
+        
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View1</title>
+</head>
+<body>
+    <div>
+        A form is a container for input elements: buttons, checkboxes, text inputs, and more. It’s the input
+elements in a form that enable a user to enter information into a page and submit information to
+a server. But which server? And how does the information get to the server? The answers to these
+questions are in the two most important attributes of a form tag: the action and the method
+        attributes.
+
+The action attribute tells a web browser where to send the information, so naturally the action
+contains a URL. The URL can be relative, or in cases where you want to send information to a
+different application or a different server, the action URL can also be an absolute URL. The following
+form tag will send a search term (the input named q) to the Bing search page from any
+application:
+
+        <form action="http://www.bing.com/search" method="GET">
+            <input name="q" type="text" />
+            <input type="submit" value="Search!" />
+        </form>
+        
+        
+        To GET or to POST?
+You can also give the method attribute the value post, in which case the browser does not place the
+input values into the query string, but places them inside the body of the HTTP request instead.
+Although you can successfully send a POST request to a search engine and see the search results, an
+HTTP GET is preferable. Unlike the POST request, you can bookmark the GET request because all
+the parameters are in the URL. You can use the URLs as hyperlinks in an e-mail or a web page and
+        preserve all the form input values.
+
+Even more importantly, the GET verb is the right tool for the job because GET represents an idempotent,
+read-only operation. You can send a GET request to a server repeatedly with no ill effects,
+        because a GET does not (or should not) change state on the server.
+
+A POST, on the other hand, is the type of request you
+use to submit a credit card transaction, add an album to
+a shopping cart, or change a password. A POST request
+generally modifi es state on the server, and repeating the
+request might produce undesirable effects (such as double
+billing). Many browsers help a user avoid repeating a
+POST request. Figure 5-1 shows what happens when trying
+        to refresh a POST request in Chrome.
+
+Web applications generally use GET requests for reads and POST requests for writes (which typically
+include updates, creates, and deletes). A request to pay for music uses POST. A request to
+search for music, a scenario you look at next, uses GET.
+        
+        
+        
+        
+
+    </div>
+</body>
+</html>
