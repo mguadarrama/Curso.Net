@@ -22,23 +22,18 @@ namespace Class15_Todo.Controllers
 
         public ActionResult Index()
         {
-            //return View(db.Todos.ToList());
-            TodoViewModel viewModel = new TodoViewModel
-            {
-                TodoList = db.Todos.ToList(),
-                TodoNew = db.Todos.Add(new Todo())
-            };
-            
 
-
+            TodoViewModel viewModel = new TodoViewModel();
+            viewModel.TodoList = db.Todos.ToList();
+            viewModel.TodoNew = db.Todos.Add(new Todo());
             return View(viewModel);
+            //return View(db.Todos.ToList());
         }
 
         //
-        // POST: /Todo/Create
+        // POST: /Todo/Index
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Index(TodoViewModel todoViewModel)
         {
             if (ModelState.IsValid)
@@ -84,7 +79,6 @@ namespace Class15_Todo.Controllers
         // POST: /Todo/Create
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Todo todo)
         {
             if (ModelState.IsValid)

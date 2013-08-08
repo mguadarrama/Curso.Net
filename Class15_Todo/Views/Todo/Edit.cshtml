@@ -15,14 +15,14 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Todo</legend>
+   
+      
 
         <div class="editor-label">
             @Html.LabelFor(model => model.TaskId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TaskId)
+            @Html.TextBoxFor(model => model.TaskId,    new {@readonly = "readonly" })
             @Html.ValidationMessageFor(model => model.TaskId)
         </div>
 
@@ -45,7 +45,7 @@
         <p>
             <input type="submit" value="Save" />
         </p>
-    </fieldset>
+  
 }
 
 <div>

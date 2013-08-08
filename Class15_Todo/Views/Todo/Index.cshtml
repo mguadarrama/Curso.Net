@@ -4,50 +4,51 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>TODO</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 
 
-<h2>Create</h2>
+
+
+
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Todo</legend>
 
-        <div class="editor-label">
+
+       @* <div class="editor-label">
             @Html.LabelFor(model => model.TodoNew.TaskId)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TodoNew.TaskId)
-            @Html.ValidationMessageFor(model => model.TodoNew.TaskId)
-        </div>
+            @Html.ValidationMessageFor(model => model.TaskId)
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.TodoNew.TaskName)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TodoNew.TaskName)
-            @Html.ValidationMessageFor(model => model.TodoNew.TaskName)
+         
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TodoNew.Completed)
+        @*<div class="editor-label">
+           @Html.LabelFor(model => model.TodoNew.Completed)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TodoNew.Completed)
             @Html.ValidationMessageFor(model => model.TodoNew.Completed)
-        </div>
+        </div>*@
 
         <p>
             <input type="submit" value="Create" />
         </p>
-    </fieldset>
+
 }
 
 
@@ -82,7 +83,7 @@
             @Html.DisplayFor(modelItem => item.Completed)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.TaskId  }) |
 
             @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
