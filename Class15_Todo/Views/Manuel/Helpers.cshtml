@@ -17,18 +17,28 @@
 
         
         @Html.Label("label1")
-        
+        @*
         @Html.DropDownList("PaisesId", ViewBag.Paises as SelectList)
-        
+        *@
 
         @*@Html.TextBox("textbox1", Model.Campo1)*@
-        @Html.TextBox("textbox1")
+        
+        
+        
+        @Html.TextBox("textbox1", new {@class="input-large"})
+        <input type="text" class="input-large"  name="texbox2" value="textbox2" />
+        
+        
+        
+        
+        
+        
 
         @Html.ValidationMessage("modelName")
         
         @Html.TextArea("textarea1")
         
-        @Html.ListBox("listbox1")
+       @* @Html.ListBox("listbox1")*@
         
         
         @* ViewBag.Price = 10.0; *@
@@ -37,7 +47,7 @@
         
         
         @* Helper tipado*@
-        @Html.TextBoxFor(m => m.Title)
+        @*@Html.TextBoxFor(m => m.Title)*@
         
 
     </div>

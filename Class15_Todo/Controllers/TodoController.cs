@@ -15,19 +15,17 @@ namespace Class15_Todo.Controllers
         private TodoDatabaseEntities db = new TodoDatabaseEntities();
 
 
-
-
         //
         // GET: /Todo/
 
         public ActionResult Index()
         {
 
-            TodoViewModel viewModel = new TodoViewModel();
+            var viewModel = new TodoViewModel();
             viewModel.TodoList = db.Todos.ToList();
-            viewModel.TodoNew = db.Todos.Add(new Todo());
+            viewModel.TodoNew = new Todo();
             return View(viewModel);
-            //return View(db.Todos.ToList());
+            
         }
 
         //
@@ -60,12 +58,26 @@ namespace Class15_Todo.Controllers
         public ActionResult Details(int id = 1)
         {
             Todo todo = db.Todos.Find(id);
-            if (todo == null)
-            {
-                return HttpNotFound();
-            }
+            
             return View(todo);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //
         // GET: /Todo/Create
@@ -91,8 +103,19 @@ namespace Class15_Todo.Controllers
             return View(todo);
         }
 
+
+
+
+
+
+
+
+
+
+
+
         //
-        // GET: /Todo/Edit/5
+        // GET: http://localhost/Todo/Edit/5
 
         public ActionResult Edit(int id = 1)
         {
@@ -103,6 +126,17 @@ namespace Class15_Todo.Controllers
             }
             return View(todo);
         }
+
+
+
+
+
+
+
+
+
+
+
 
         //
         // POST: /Todo/Edit/5
